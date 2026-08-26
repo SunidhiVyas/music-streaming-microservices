@@ -7,13 +7,11 @@ import cors from "cors";
 doetnv.config();
 
 export const redisClient = redis.createClient({
-  password: process.env.Redis_Password,
   socket: {
-    host: "redis-18607.crce179.ap-south-1-1.ec2.redns.redis-cloud.com",
-    port: 18607,
+    host: "localhost",
+    port: 6379,
   },
 });
-
 redisClient
   .connect()
   .then(() => console.log("connected to redis"))
